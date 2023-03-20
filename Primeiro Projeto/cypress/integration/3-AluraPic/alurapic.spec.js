@@ -1,3 +1,5 @@
+const { expect } = require("chai");
+
 describe('Login e registro de usuarios alura pic', () => {
 
     beforeEach(() => {
@@ -15,18 +17,20 @@ describe('Login e registro de usuarios alura pic', () => {
     cy.contains('ap-vmessage', 'Password is required!').should('be.visible');
     })
 
-    it('verifica mensagens de email invalido', () => {
-        cy.contains('a','Register now').click();
-        cy.contains('button', 'Register').click();
-        cy.get('input[formcontrolname="email"]').type('Mariana');
-        cy.contains('ap-vmessage', 'Invalid e-mail').should('be.visible');
+    it.only('fazer login valido', () => {
+        cy.get('input[formcontrolname="userName"]').type('Flavio');
+        cy.get('input[formcontrolname="password"]').type('123');
+        cy.get('button [type="submit]').click();
+        cy.contains('a', '(Logout)').should('be.visible');
     })
 
-    it('verifica mensagens de senha com menos de 8 caracteres', () => {
-        cy.contains('a','Register now').click();
-        cy.contains('button', 'Register').click();
+    it.only('fazer login invalido', () => {
+        cy.get('input[formcontrolname="userName"]').type('Miagy');
         cy.get('input[formcontrolname="password"]').type('123');
-        cy.contains('button', 'Register').click();
-        cy.contains('ap-vmessage','Password is required!').should('be.visible');
+        cy.get('button [type="submit]').click();
+        cy.on('Windows:alert', (str) => {
+                expect(str).to.equal('Invalid user name or password')
+
+        })
     })
 })
