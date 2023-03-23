@@ -16,5 +16,11 @@
       "fullName": "Miagy Skywalker",
       "userName": "Miagy",
       "password": "darthvader"
-    }
+    },
+    {
+        "email": "felicia.skywalker@alura.com.br",
+        "fullName": "felicia Skywalker",
+        "userName": "Felicia",
+        "password": "dasdfghj"
+      }
   ]
