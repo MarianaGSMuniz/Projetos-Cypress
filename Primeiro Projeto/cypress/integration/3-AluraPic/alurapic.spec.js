@@ -1,4 +1,4 @@
-describe('Login e registro de usuarios alura pic', () => {
+describe('Usabilidade Homepage', () => {
 
     beforeEach(() => {
       cy.visit('https://alura-fotos.herokuapp.com')
