@@ -7,7 +7,7 @@ describe('Login de usuarios alura pic', () => {
 
      
         it('fazer login de usuario valido', () => {
-        cy.login('Mariana', '123');
+        cy.login(Cypres.env('userName'), Cypres.env('password'));
         cy.contains('a', '(Logout)').should('be.visible');
      })
 
