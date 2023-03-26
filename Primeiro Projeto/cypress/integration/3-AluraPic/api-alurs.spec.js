@@ -1,6 +1,8 @@
 describe('Buscar fotos e dados', ()=> {
 
-    it('buscar fotos da mariana', ()=> {
+    it.only('buscar fotos da mariana', ()=> {
+
+        const tempoEsperado = Math.round() * 3000;
         cy.request({
             method: 'GET',
             url: 'https://apialurapic.herokuapp.com/mariana/photos'
